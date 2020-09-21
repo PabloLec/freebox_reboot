@@ -60,4 +60,4 @@ Si vous obtenez tout de même une erreur de driver à l'exectution du script vou
 ```os.system("PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME")```
 
 # Fonctionnement (sans le paramètre headless)
-![](https://i.imgur.com/KSmLO8S.mp4)
+![](https://i.imgur.com/KSmLO8S.gif)
