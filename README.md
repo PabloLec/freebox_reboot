@@ -13,18 +13,18 @@ Si vous utilisez pour la première fois Selenium, le driver Chrome doit se trouv
 
 Pour visualiser vos PATH et éventuellement déplacer/copier le driver Chrome dans l'un des chemins:
 
- >Windows/Powershell
+ >Windows/Powershell :
 ```$env:path -split ";"```
 
->Linux/MacOS
+>Linux/MacOS :
 ```echo $PATH```
 
 - Sinon, ajouter le chemin du driver à la variable PATH:
 
-> Windows/Powershell
+> Windows/Powershell :
 ```$env:Path += ";LEMPLACEMENT_DU_DRIVER_CHROME"```  
 
-> Linux/MacOS
+> Linux/MacOS :
 ```PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME```
 
 Si vous obtenez tout de même une erreur de driver à l'exectution du script vous pouvez essayer:
@@ -34,8 +34,8 @@ Si vous obtenez tout de même une erreur de driver à l'exectution du script vou
 
 - Avant ou après la variable MOT_DE_PASSE:
 
-> Windows/Powershell
+> Windows/Powershell :
 ```os.system("$env:Path += ";LEMPLACEMENT_DU_DRIVER_CHROME")```  
 
-> Linux/MacOS
+> Linux/MacOS :
 ```os.system("PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME")```
