@@ -1,4 +1,4 @@
-import time, os
+import time
 from selenium import webdriver 
 
 ##### RENTREZ VOTRE MOT DE PASSE FREEBOX OS #####
