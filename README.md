@@ -46,7 +46,7 @@ Le driver Chrome doit se trouver dans votre PATH.
 
 
 
-Si vous obtenez tout de même une erreur de driver à l'exectution du script vous pouvez essayer:
+Si vous obtenez tout de même une erreur de driver à l'exectution du script vous pouvez essayer de modifier le fichier ```free_reboot.py```:
 
 - En première ligne :
 ```import os```  
