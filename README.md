@@ -15,8 +15,18 @@ Ce script Python permet de redémarrer sa Freebox (Freebox OS >3.0) via un péri
   (voir https://mafreebox.freebox.fr)
 - Exécutez le fichier free_reboot.py
   
-# Troubleshooting
-Si vous utilisez pour la première fois Selenium, le driver Chrome doit se trouver dans votre PATH.
+# Troubleshooting 
+Si ce n'est pas déjà le cas, installez Selenium via pip (Pip inclus par défaut dans python 3.4+):
+
+Pour l'installation de pip: https://pip.pypa.io/en/stable/installing/
+
+Pour installer Selenium: ```pip3 install selenium```
+
+---
+
+Si vous utilisez pour la première fois Selenium : 
+
+Le driver Chrome doit se trouver dans votre PATH.
 
 Pour visualiser vos PATH et éventuellement déplacer/copier le driver Chrome dans l'un des chemins:
 
