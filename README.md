@@ -28,7 +28,7 @@ Si vous utilisez pour la première fois Selenium :
 
 Le driver Chrome doit se trouver dans votre PATH.
 
-Pour visualiser vos PATH et éventuellement déplacer/copier le driver Chrome dans l'un des chemins:
+- Pour visualiser vos PATH et éventuellement déplacer/copier le driver Chrome dans l'un des chemins:
 
  >Windows Powershell :
 ```$env:path -split ";"```
