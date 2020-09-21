@@ -62,4 +62,4 @@ Si vous obtenez tout de même une erreur de driver à l'exectution du script vou
 # Fonctionnement
 (sans le paramètre headless)
 
-![](https://media.giphy.com/media/BfXICbd7T1GmRHNr1a/giphy.gif)
+![](https://im3.ezgif.com/tmp/ezgif-3-d323e981dabc.gif)
