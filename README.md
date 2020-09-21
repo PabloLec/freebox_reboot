@@ -30,7 +30,7 @@ Le driver Chrome doit se trouver dans votre PATH.
 
 Pour visualiser vos PATH et éventuellement déplacer/copier le driver Chrome dans l'un des chemins:
 
- >Windows/Powershell :
+ >Windows Powershell :
 ```$env:path -split ";"```
 
 >Linux/MacOS :
