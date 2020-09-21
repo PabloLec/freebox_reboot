@@ -44,6 +44,8 @@ Le driver Chrome doit se trouver dans votre PATH.
 > Linux/MacOS :
 ```PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME```
 
+
+
 Si vous obtenez tout de même une erreur de driver à l'exectution du script vous pouvez essayer:
 
 - En première ligne :
