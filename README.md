@@ -58,8 +58,3 @@ Si vous obtenez tout de même une erreur de driver à l'exectution du script vou
 
 > Linux/MacOS :
 ```os.system("PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME")```
-
-# Fonctionnement
-(sans le paramètre headless)
-
-![](https://im3.ezgif.com/tmp/ezgif-3-d323e981dabc.gif)
