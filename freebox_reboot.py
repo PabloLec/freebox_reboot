@@ -1,5 +1,6 @@
 import time
-from selenium import webdriver 
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as ec
 
 ##### RENTREZ VOTRE MOT DE PASSE FREEBOX OS #####
 MOT_DE_PASSE = "VOTRE_MOT_DE_PASSE_FREEBOX_OS"
@@ -7,7 +8,7 @@ MOT_DE_PASSE = "VOTRE_MOT_DE_PASSE_FREEBOX_OS"
 
 
 def click_on_element(element):
-	'''Clic sur un élément du DOM avec offset'''
+	"""Clic sur un élément du DOM avec offset"""
 	selenium_action = webdriver.common.action_chains.ActionChains(selenium_chrome)
 	selenium_action.move_to_element_with_offset(element, 15, 15)
 	selenium_action.click()
@@ -25,31 +26,26 @@ selenium_options.add_argument("--disable-extensions")
 selenium_chrome = webdriver.Chrome(options=selenium_options)
 
 selenium_chrome.get(target_url)
-time.sleep(5)
 
 # Saisie du mot de passe
-mdp = selenium_chrome.find_element_by_xpath("//input[@class='password']")
+mdp = WebDriverWait(driver, 20).until(ec.element_to_be_clickable((By.XPATH, "//input[@class='password']")))
 mdp.send_keys(MOT_DE_PASSE)
 
 # Clic sur le bouton de connexion
-bouton_connexion = selenium_chrome.find_element_by_xpath("//input[@class='submit-btn']")
+bouton_connexion = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((By.XPATH, "//input[@class='submit-btn']")))
 click_on_element(bouton_connexion)
 
-time.sleep(5)
-
-# Clic sur le bouton de menu Frebbox OS
-bouton_free = selenium_chrome.find_element_by_xpath("//span[@style='line-height: 39px;']")
+# Clic sur le bouton de menu Freebox OS
+bouton_free = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((By.XPATH, "//span[@id='ext-comp-1017-btnIconEl']")))
 click_on_element(bouton_free)
 
-time.sleep(1)
-
 # Clic sur le bouton de redémarrage
-bouton_reboot = selenium_chrome.find_element_by_xpath("//div[@class='x-menu-item-icon btn-32-reboot ']")
+bouton_reboot = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((By.XPATH, "//div[@id='menuitem-1038']")))
 click_on_element(bouton_reboot)
 
-time.sleep(1)
 
-bouton_oui = selenium_chrome.find_element_by_xpath("//a[@style='right: auto; left: 88.5px; top: 0px; margin: 0px; width: 75px;']")
+# Confirmation du redémarrage
+bouton_oui = WebDriverWait(driver, 10).until(ec.element_to_be_clickable((By.XPATH, "//a[@id='button-1006']")))
 click_on_element(bouton_oui)
 
 # Fermeture de Selenium
