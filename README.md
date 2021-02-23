@@ -39,7 +39,7 @@ Le driver Chrome doit se trouver dans votre PATH.
 ```$env:Path += ";LEMPLACEMENT_DU_DRIVER_CHROME"```  
 
 > Linux/MacOS :
-```PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME```
+```export PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME```
 
 
 
