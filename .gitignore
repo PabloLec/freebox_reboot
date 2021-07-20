@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 freebox.token
 env/
+build/
+dist/
+*.egg-info

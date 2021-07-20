@@ -5,7 +5,7 @@ Ce script Python permet de redémarrer sa Freebox (Freebox OS >3.0) via un péri
 # Installation
 
 ```
-python3 -m pip install freebox_reboot
+python3 -m pip install freebox-reboot
 ```
   
 # Utilisation 
