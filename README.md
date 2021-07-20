@@ -1,57 +1,38 @@
 # Principe
 
-Ce script Python permet de redémarrer sa Freebox (Freebox OS >3.0) via un périphérique du réseau local avec l'aide de Selenium
+Ce script Python permet de redémarrer sa Freebox (Freebox OS >3.0) via un périphérique du réseau local.
 
-# Prérequis
+# Installation
 
-- Python 3.x
-- Selenium 3.x (voir https://www.selenium.dev)
-- Chrome driver (voir https://chromedriver.storage.googleapis.com/index.html) 
-
-Pour installer Selenium: ```pip3 install selenium```
-
-Pour l'installation de pip: https://pip.pypa.io/en/stable/installing/ (Pip inclus par défaut dans python 3.4+)
-
-# Installation/Utilisation
-
-- Téléchargez/Clonez le dépot
-- Remplacez la valeur de la variable MOT_DE_PASSE par le mot de passe que vous utilisez pour vous connecter à Freebox OS.
-  (voir https://mafreebox.freebox.fr)
-- Exécutez le fichier free_reboot.py
+```
+python3 -m pip install freebox_reboot
+```
   
-# Troubleshooting 
+# Utilisation 
 
-Si vous utilisez pour la première fois Selenium : 
+Pour démarrer le script:
 
-Le driver Chrome doit se trouver dans votre PATH.
+```
+python3 -m freebox_reboot
+```
 
-- Pour visualiser vos PATH et éventuellement déplacer/copier le driver Chrome dans l'un des chemins:
+A la première utilisation, l'application va générer un token d'authentification qui sera automatiquement utilisé à l'avenir.
 
- >Windows Powershell :
-```$env:path -split ";"```
+- Démarrez le script avec la commande ci-dessus.
+- Au bout de quelques secondes vous devriez voir apparaître " - En attente d'autorisation"
+- Sur l'écran de votre Freebox une demande de confirmation devrait vous être demandée, accordez l'accès à l'application à l'aide des boutons présents sur votre Freebox.
+- Le script va reprendre son éxecution puis vous informer qu'il ne dispose pas des droits nécessaires.
+- Rendez vous sur http://mafreebox.freebox.fr/#Fbx.os.app.settings.Accounts
+- Ouvrez l'onglet *Applications*.
+- Trouvez l'application *Freebox Reboot*.
+- Cochez la case *Modification des réglages de la Freebox*.
+- Validez.
+- La configuration est terminée, les paramètres sont sauvegardés, vous pouvez maintenant relancer le script.
 
->Linux/MacOS :
-```echo $PATH```
+# Arguments
 
-- Sinon, ajoutez le chemin du driver à la variable PATH:
+Les arguments optionels suivants sont disponibles:
 
-> Windows Powershell :
-```$env:Path += ";LEMPLACEMENT_DU_DRIVER_CHROME"```  
-
-> Linux/MacOS :
-```export PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME```
-
-
-
-Si vous obtenez tout de même une erreur de driver à l'exectution du script vous pouvez essayer de modifier le fichier ```free_reboot.py```:
-
-- En première ligne :
-```import os```  
-
-- Avant ou après la variable MOT_DE_PASSE:
-
-> Windows Powershell :
-```os.system("$env:Path += ";LEMPLACEMENT_DU_DRIVER_CHROME")```  
-
-> Linux/MacOS :
-```os.system("PATH=$PATH:LEMPLACEMENT_DU_DRIVER_CHROME")```
+- `-v`, `--verbose` Affiche toutes les requêtes et leurs réponses.
+- `-d`, `--dry` Exécute le script sans redémarrer la Freebox.
+- `--http` Effectuer les requêtes vers l'API en HTTP et non en HTTPS.
