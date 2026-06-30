@@ -2,6 +2,7 @@ import requests
 import time
 import hmac
 import hashlib
+import sys
 import argparse
 from pathlib import Path
 
@@ -142,6 +143,7 @@ def get_token():
         track_auth = get(f"{_FBX_URL}/login/authorize/{track_id}")
 
     print(" - Autorisation accordée !")
+    time.sleep(1)
 
     _FBX_TOKEN = app_token
 
@@ -156,8 +158,9 @@ def reboot():
         print(" - Succès ! Freebox en cours de redémarrage")
     else:
         print(" !!! Echec de la demande de redémarrage")
-        if reboot_endpoint["missing_right"] == "settings":
+        if "missing_right" in reboot_endpoint and reboot_endpoint["missing_right"] == "settings":
             rights_error()
+        sys.exit(1)
 
 
 def rights_error():
